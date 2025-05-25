@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title style="color: #5D4037;">Custom Bracelet Order</title>
+  <style>
+    body { font-family: Arial; padding: 20px; max-width: 600px; margin: auto; background-color: #FFD1BA;}
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      requierd: required;
+    }
+    button {
+      background: #F497B0;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      requierd: required;
+    }
+    .thank-you {
+      background: #e0ffe0;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: none;
+      requierd: required;
+    }
+  </style>
+</head>
+<body>
+
+<h2>✨ Custom Bracelet Order ✨</h2>
+
+<form action="https://formspree.io/f/mjkweoee" method="POST">
+  <label>Your Name</label>
+  <input type="text" name="name" required>
+
+  <label>Phone Number</label>
+  <input type="tel" name="phone" required>
+
+  <label>Custom Bracelet Details</label>
+  <textarea name="details" rows="4" required></textarea>
+
+  <button type="submit">Place Custom Order</button>
+</form>
+
+</body>
+</html>
