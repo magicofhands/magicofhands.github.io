@@ -1,137 +1,58 @@
-<Html>
-<Head>
-<Title>Bracelet my Richel</title>
-	<style>
-		img{
-			border-color: saddlebrown;
-		}
-			hr{
-			border-color: saddlebrown;
-		}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bracelet Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
 
-	</style>
-</Head>
-<script>
-  function addToCart(name, price, img) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ name, price, img });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Added to cart! 🛒");
-  }
-</script>
-<body style="background-color: #FFD1BA;">
- <center>
-<marquee direction="Right" behavior="alternate" scrollamount="15">
-<h1 style=font-family: 'Bubbly Soda';
-  src: url('fonts/BubblySoda.ttf') format('truetype'); size="1000">Shop now!</h1>
-</marquee>
-<hr style="size: 4 ;" color="black">
-</center>
-<img src="25.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> Colourful beads + Name alphabet Bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('Colourful beads + Name alphabet Bracelet', 100, '25.jpg')">Add to Cart</button>
-</insert>
-<br>
-<hr style="size: 4 ;" color="
-<br>
-<insert>
-	<strong>Item:</strong> Emoji + White pearl bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.120
-	<br>
-	<button>Add to cart</button>
-</insert>
-<hr style="size: 4 ;" color="Black">
-<img src="34.jpg" width="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> 1 Emoji + Golden beads bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.130
-	<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('1 Emoji + Golden beads bracelet', 130, '34.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="33.jpg" wdth="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> Black and white bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.120
-	<br>
-	<button style="background-color: #CDA4DE;"onclick="addToCart('Black and white bracelet', 120, '33.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="32.jpg" wdth="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> Colourful + Random alphabets bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.120
-	<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('Colourful + Random alphabets bracelet', 120, '32.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="29.jpg" wdth="90" length="90" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> emoji + First name alphabet bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100
-<br>
-<button style="background-color: #CDA4DE;" onclick="addToCart('emoji + First name alphabet bracelet', 100, '29.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="26.jpg" wdth="90" length="90" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> 1 emoji + Golden beads + alphabet beads bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.150
-<br>
-<button style="background-color: #CDA4DE;" onclick="addToCart('1 emoji + Golden beads + alphabet beads bracelet', 150, '26.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="24.jpg" wdth="90" length="90" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> only emoji beads bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100
-<br>
-<button style="background-color: #CDA4DE;" onclick="addToCart('only emoji beads bracelet', 100, '24.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="22.jpg" wdth="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> name alphbet + White pearls Bracelet 
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100</insert>
-	<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('Only emoji beads bracelet', 100)">Add to Cart</button>
+  <h1>My Bracelet Gallery</h1>
+  <div class="gallery">
+    <!-- Looping through images 21.jpg to 35.jpg -->
+    <img src="21.jpg" alt="Bracelet 21">
+    <img src="22.jpg" alt="Bracelet 22">
+    <img src="23.jpg" alt="Bracelet 23">
+    <img src="24.jpg" alt="Bracelet 24">
+    <img src="25.jpg" alt="Bracelet 25">
+    <img src="26.jpg" alt="Bracelet 26">
+    <img src="27.jpg" alt="Bracelet 27">
+    <img src="28.jpg" alt="Bracelet 28">
+    <img src="29.jpg" alt="Bracelet 29">
+    <img src="30.jpg" alt="Bracelet 30">
+    <img src="31.jpg" alt="Bracelet 31">
+    <img src="32.jpg" alt="Bracelet 32">
+    <img src="33.jpg" alt="Bracelet 33">
+    <img src="34.jpg" alt="Bracelet 34">
+    <img src="35.jpg" alt="Bracelet 35">
+  </div>
+
 </body>
-</Html>
+</html>
