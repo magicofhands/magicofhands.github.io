@@ -1,58 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Bracelet Gallery</title>
+  <title>✨My Gallery✨</title>
   <style>
     body {
+      background-color: #FFD1BA;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
     }
+
     h1 {
+      margin: 0;
+    }
+
+    img {
+      border: 3px solid saddlebrown;
+      width: 250px;
+      height: 250px;
+      margin: 10px;
+    }
+
+    .gallery-row {
       text-align: center;
-      color: #333;
+      margin-bottom: 20px;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
+
+    marquee {
+      font-size: 32px;
+      color: #5C4033;
     }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
+
+    .subtitle {
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
 
-  <h1>My Bracelet Gallery</h1>
-  <div class="gallery">
-    <!-- Looping through images 21.jpg to 35.jpg -->
-    <img src="21.jpg" alt="Bracelet 21">
-    <img src="22.jpg" alt="Bracelet 22">
-    <img src="23.jpg" alt="Bracelet 23">
-    <img src="24.jpg" alt="Bracelet 24">
-    <img src="25.jpg" alt="Bracelet 25">
-    <img src="26.jpg" alt="Bracelet 26">
-    <img src="27.jpg" alt="Bracelet 27">
-    <img src="28.jpg" alt="Bracelet 28">
-    <img src="29.jpg" alt="Bracelet 29">
-    <img src="30.jpg" alt="Bracelet 30">
-    <img src="31.jpg" alt="Bracelet 31">
-    <img src="32.jpg" alt="Bracelet 32">
-    <img src="33.jpg" alt="Bracelet 33">
-    <img src="34.jpg" alt="Bracelet 34">
-    <img src="35.jpg" alt="Bracelet 35">
-  </div>
+  <br>
+  <center>
+    <marquee direction="Right" behavior="alternate" scrollamount="15">
+      <h1>✨My Gallery✨</h1>
+    </marquee>
+
+    <br>
+    <div class="subtitle">🧵 my bracelets collection 🧵</div>
+    <br>
+
+    <!-- Gallery Rows -->
+    <div class="gallery-row">
+      <img src="21.jpg" alt="Bracelet 21">
+      <img src="22.jpg" alt="Bracelet 22">
+      <img src="23.jpg" alt="Bracelet 23">
+      <img src="24.jpg" alt="Bracelet 24">
+      <img src="25.jpg" alt="Bracelet 25">
+    </div>
+
+    <div class="gallery-row">
+      <img src="26.jpg" alt="Bracelet 26">
+      <img src="27.jpg" alt="Bracelet 27">
+      <img src="28.jpg" alt="Bracelet 28">
+      <img src="29.jpg" alt="Bracelet 29">
+      <img src="30.jpg" alt="Bracelet 30">
+    </div>
+
+    <div class="gallery-row">
+      <img src="31.jpg" alt="Bracelet 31">
+      <img src="32.jpg" alt="Bracelet 32">
+      <img src="33.jpg" alt="Bracelet 33">
+      <img src="34.jpg" alt="Bracelet 34">
+      <img src="35.jpg" alt="Bracelet 35">
+    </div>
+  </center>
 
 </body>
 </html>
