@@ -73,15 +73,41 @@
     .remove-btn:hover {
       background: #e60000;
     }
+
+    #submit-order {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #5D4037;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #submit-order:hover {
+      background: #4a3029;
+    }
   </style>
 </head>
 <body>
   <h1>🛒 Your Cart</h1>
 
-  <div id="cart-items"></div>
-  <div id="cart-total" class="cart-total"></div>
+  <!-- Form Start -->
+  <form id="cart-form" action="https://formspree.io/f/mjkweoee" method="POST" onsubmit="return prepareAndSubmit()">
+    <div id="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+
+    <!-- Hidden field to send cart data -->
+    <textarea name="cart_data" id="cart_data" style="display:none;"></textarea>
+
+    <button id="submit-order" type="submit">Submit Order</button>
+  </form>
 
   <script>
+    const DELIVERY_CHARGE = 200;
+
     function renderCart() {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       const cartItemsDiv = document.getElementById('cart-items');
@@ -95,7 +121,7 @@
         return;
       }
 
-      let total = 0;
+      let subtotal = 0;
 
       cart.forEach((product, index) => {
         const itemDiv = document.createElement('div');
@@ -105,15 +131,21 @@
           <span>${product.name}</span>
           <div>
             <span>Rs ${product.price}</span>
-            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+            <button class="remove-btn" type="button" onclick="removeItem(${index})">Remove</button>
           </div>
         `;
 
         cartItemsDiv.appendChild(itemDiv);
-        total += Number(product.price);
+        subtotal += Number(product.price);
       });
 
-      cartTotalDiv.textContent = `Total: Rs ${total}`;
+      const total = subtotal + DELIVERY_CHARGE;
+
+      cartTotalDiv.innerHTML = `
+        <div>Subtotal: Rs ${subtotal}</div>
+        <div>Delivery Charges: Rs ${DELIVERY_CHARGE}</div>
+        <div style="font-weight: bold;">Total: Rs ${total}</div>
+      `;
     }
 
     function removeItem(index) {
@@ -123,10 +155,30 @@
       renderCart();
     }
 
-    // Initial render
-    document.addEventListener("DOMContentLoaded", renderCart);
+    function prepareAndSubmit() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (cart.length === 0) {
+        alert("Your cart is empty! Add items before submitting.");
+        return false;
+      }
 
-    // 🔥 Listen for changes from other tabs/pages
+      let cartText = "🛍️ Your Cart Order:\n\n";
+      let subtotal = 0;
+      cart.forEach(item => {
+        cartText += `${item.name} - Rs ${item.price}\n`;
+        subtotal += Number(item.price);
+      });
+
+      const total = subtotal + DELIVERY_CHARGE;
+      cartText += `\nSubtotal: Rs ${subtotal}`;
+      cartText += `\nDelivery Charges: Rs ${DELIVERY_CHARGE}`;
+      cartText += `\nTotal (with delivery): Rs ${total}`;
+
+      document.getElementById('cart_data').value = cartText;
+      return true;
+    }
+
+    document.addEventListener("DOMContentLoaded", renderCart);
     window.addEventListener("storage", () => {
       renderCart();
     });
