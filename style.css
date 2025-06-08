@@ -33,11 +33,16 @@ body {
 
 .navbar ul {
   list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;              /* Added */
+  justify-content: center;    /* Added */
+  gap: 15px;                 /* Added for spacing */
 }
 
 .navbar li {
   display: inline-block;
-  margin: 0 15px;
+  /* margin removed because flex with gap handles spacing */
 }
 
 .navbar a {
@@ -88,9 +93,16 @@ body {
     padding: 15px 0;
   }
 
+  .navbar ul {
+    display: flex;            /* Changed from none */
+    flex-wrap: nowrap;        /* Prevent wrapping */
+    justify-content: center;
+    gap: 10px;
+  }
+
   .navbar li {
-    display: block;
-    margin: 10px 0;
+    display: inline-block;   /* Changed from block */
+    margin: 0;              /* Removed margin to keep spacing consistent */
   }
 
   .navbar a {
