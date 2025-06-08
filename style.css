@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #f7f1eb;
+}
+
+/* Header */
+#header {
+  width: 100%;
+  background-color: #DEB887;
+  color: #4B3621;
+  font-size: 36px;
+  font-family: 'Dancing Script', cursive;
+  text-align: center;
+  font-weight: 700;
+  padding: 20px 0;
+  /* Removed text-shadow to avoid double text look */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #DEB887;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #4B3621;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #000;
+}
+
+/* Horizontal line */
+#first_HR {
+  width: 100%;
+  height: 5px;
+  border: none;
+  margin: 0 auto;
+  background-color: #4B3621;
+}
+
+/* Video */
+.full-width-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Paragraph */
+.custom-paragraph {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: #4B3621;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  #header {
+    font-size: 28px;
+    padding: 15px 0;
+  }
+
+  .navbar li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
+
+  .custom-paragraph {
+    font-size: 16px;
+    padding: 5px;
+  }
+}
