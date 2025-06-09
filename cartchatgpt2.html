@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title style="color: #5D4037;">Your Cart</title>
+  <title>Your Cart</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -11,23 +11,32 @@
       margin: 0;
       padding: 40px 20px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
     }
 
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    #cart-items {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1100px;
       width: 100%;
+      justify-content: space-between;
+    }
+
+    .left, .right {
+      flex: 1;
+      min-width: 320px;
       max-width: 500px;
       background: white;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    h1, h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
     }
 
     .cart-item {
@@ -91,9 +100,7 @@
     }
 
     .input-field {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 500px;
+      margin-top: 15px;
     }
 
     .input-field label {
@@ -103,49 +110,91 @@
     }
 
     .input-field input,
+    .input-field select,
     .input-field textarea {
       width: 100%;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
       box-sizing: border-box;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>🛒 Your Cart</h1>
+  <form id="cart-form" action="https://formspree.io/f/mjkweoee" method="POST" onsubmit="return prepareAndSubmit()" enctype="multipart/form-data">
+    <div class="container">
 
-  <!-- Form Start -->
-  <form id="cart-form" action="https://formspree.io/f/mjkweoee" method="POST" onsubmit="return prepareAndSubmit()">
-    <div id="cart-items"></div>
-    <div id="cart-total" class="cart-total"></div>
+      <!-- LEFT SIDE -->
+      <div class="left">
+        <h1>🛒 Your Cart</h1>
 
-    <!-- User Info Fields -->
-    <div class="input-field">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required />
+        <div id="cart-items"></div>
+        <div id="cart-total" class="cart-total"></div>
+
+        <!-- User Info -->
+        <div class="input-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div class="input-field">
+          <label for="email">Gmail</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="input-field">
+          <label for="contact">Contact Number</label>
+          <input type="tel" id="contact" name="contact" pattern="[0-9]{10,15}" placeholder="e.g. 03001234567" required />
+        </div>
+
+        <div class="input-field">
+          <label for="address">Address</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="right">
+        <h2>💳 Payment Method</h2>
+
+        <div class="input-field">
+          <label for="payment_method">Select Payment Method</label>
+          <select id="payment_method" name="payment_method" required>
+            <option value="">-- Choose --</option>
+            <option value="Easypaisa">Easypaisa</option>
+            <option value="JazzCash">JazzCash</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+          </select>
+        </div>
+
+        <div class="input-field">
+          <label for="sender_name">Sender Name</label>
+          <input type="text" id="sender_name" name="sender_name" required />
+        </div>
+
+        <div class="input-field">
+          <label for="sender_number">Sender Number</label>
+          <input type="tel" id="sender_number" name="sender_number" required />
+        </div>
+
+        <div class="input-field">
+          <label for="txn_id">Transaction ID</label>
+          <input type="text" id="txn_id" name="txn_id" required />
+        </div>
+
+        <div class="input-field">
+          <label for="payment_screenshot">Upload Screenshot (optional)</label>
+          <input type="file" id="payment_screenshot" name="payment_screenshot" accept="image/*" />
+        </div>
+
+        <!-- Hidden field to send cart data -->
+        <textarea name="cart_data" id="cart_data" style="display:none;"></textarea>
+
+        <button id="submit-order" type="submit">Submit Order</button>
+      </div>
+
     </div>
-
-    <div class="input-field">
-      <label for="email">Gmail</label>
-      <input type="email" id="email" name="email" required />
-    </div>
-
-    <div class="input-field">
-      <label for="contact">Contact Number</label>
-      <input type="tel" id="contact" name="contact" pattern="[0-9]{10,15}" placeholder="e.g. 03001234567" required />
-    </div>
-
-    <div class="input-field">
-      <label for="address">Address</label>
-      <textarea id="address" name="address" rows="3" required></textarea>
-    </div>
-
-    <!-- Hidden field to send cart data -->
-    <textarea name="cart_data" id="cart_data" style="display:none;"></textarea>
-
-    <button id="submit-order" type="submit">Submit Order</button>
   </form>
 
   <script>
