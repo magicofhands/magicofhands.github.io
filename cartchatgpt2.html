@@ -89,6 +89,28 @@
     #submit-order:hover {
       background: #4a3029;
     }
+
+    .input-field {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .input-field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .input-field input,
+    .input-field textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -98,6 +120,22 @@
   <form id="cart-form" action="https://formspree.io/f/mjkweoee" method="POST" onsubmit="return prepareAndSubmit()">
     <div id="cart-items"></div>
     <div id="cart-total" class="cart-total"></div>
+
+    <!-- User Info Fields -->
+    <div class="input-field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="input-field">
+      <label for="email">Gmail</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="input-field">
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+    </div>
 
     <!-- Hidden field to send cart data -->
     <textarea name="cart_data" id="cart_data" style="display:none;"></textarea>
