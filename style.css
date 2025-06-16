@@ -9,6 +9,7 @@
 body {
   font-family: Georgia, serif;
   background-color: #f7f1eb;
+  padding-top: 140px; /* Prevent content hiding under fixed header + nav */
 }
 
 /* Header */
@@ -21,7 +22,11 @@ body {
   text-align: center;
   font-weight: 700;
   padding: 20px 0;
-  /* Removed text-shadow to avoid double text look */
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 /* Navbar */
@@ -29,20 +34,25 @@ body {
   background-color: #DEB887;
   padding: 1rem 0;
   text-align: center;
+
+  position: fixed;
+  top: 80px; /* Adjusted to sit below header */
+  left: 0;
+  width: 100%;
+  z-index: 998;
 }
 
 .navbar ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;              /* Added */
-  justify-content: center;    /* Added */
-  gap: 15px;                 /* Added for spacing */
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
 .navbar li {
   display: inline-block;
-  /* margin removed because flex with gap handles spacing */
 }
 
 .navbar a {
@@ -94,15 +104,15 @@ body {
   }
 
   .navbar ul {
-    display: flex;            /* Changed from none */
-    flex-wrap: nowrap;        /* Prevent wrapping */
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 10px;
   }
 
   .navbar li {
-    display: inline-block;   /* Changed from block */
-    margin: 0;              /* Removed margin to keep spacing consistent */
+    display: inline-block;
+    margin: 0;
   }
 
   .navbar a {
@@ -113,4 +123,4 @@ body {
     font-size: 16px;
     padding: 5px;
   }
-}  
+}
