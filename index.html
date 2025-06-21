@@ -4,37 +4,40 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <title>🤎magic of hands🤎</title>
+  <title>🤎Magic of Hands🤎</title>
 </head>
 <body>
-  <div id="header">
-    🤎magic of hands🤎
+
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="new index.html">🏠 Home</a></li>
+      <li><a href="Gallerypage.html">🖼️ Gallery</a></li>
+      <li><a href="shopnowpage.html">🛍️ Shop Now</a></li>
+      <li><a href="contactmechatgpt.html">📞 Contact Me</a></li>
+      <li><a href="cartchatgpt2.html">🛒 Cart</a></li>
+    </ul>
   </div>
 
-  <header>
-    <nav class="navbar">
-      <ul>
-        <li><a href="Home page.html">Home</a></li>
-        <li><a href="Gallerypage.html">Gallery</a></li>
-        <li><a href="shopnowpage.html">Shop Now</a></li>
-        <li><a href="customordechatgptfinal.html">Custom Order</a></li>
-        <li><a href="contactmechatgpt.html">Contact Me</a></li>
-        <li><a href="cartchatgpt2.html">Cart</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <hr id="first_HR" />
+  <nav class="topnav">
+    <span class="menu-icon" onclick="toggleSidebar()">☰</span>
+    <div class="logo">Magic of hands</div>
+  </nav>
 
   <video autoplay muted loop playsinline class="full-width-video">
     <source src="horizentle video.mp4" type="video/mp4" />
   </video>
 
   <p class="custom-paragraph">
-    Hello everyone😀i am a crafter🎨and live in pakistan🏠this is my website🛒and i am selling my handmade bracelets✨<br />
-    Hey there! I’m Richel, a 12-year-old crafter who’s obsessed with making cute handmade bracelets and jewelry's 🎀✨<br />
-    I started crafting for fun — bracelets,beads,charms — and now I run my own little shop! Every piece I make is filled with love, creativity, and a sprinkle of magic 💖<br />
-    Whether it’s a custom order or a one-of-a-kind bracelets, I love turning tiny ideas into something aesthetic. Thanks for supporting my small business and helping me do what I love 🧵💫
+    Hello everyone 😀 I’m a crafter 🎨 from Pakistan 🏠. This is my website 🛒 where I sell handmade bracelets ✨<br />
+    I’m Richel, a 12-year-old craft queen 👑 who loves making cute bracelets and jewelry 🎀✨<br />
+    I started this as a hobby — beads, charms, the whole vibe — and now I run my own tiny business! 💖<br />
+    Every piece is made with love, creativity, and magic. Thanks for supporting my small biz 🧵💫
   </p>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
 </body>
-</html>  
+</html>
