@@ -1,88 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title id="title">✨My Gallery✨</title>
+  <title>✨  My Gallery ✨</title>
   <style>
-    body {
-      background-color: #FFD1BA;
-      font-family: 'Segoe UI', sans-serif;
-    }
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-    .gallery-title {
-      font-size: 24px; /* smaller size here */
-      color: #5C4033;
-      margin: 0;
-      font-weight: bold;
-       
-    }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f3e8e0;
+    color: #4b2e2e;
+  }
 
-    img {
-      border: 3px solid saddlebrown;
-      width: 250px;
-      height: 250px;
-      margin: 10px;
-    }
+  header {
+    text-align: center;
+    padding: 3rem 1rem 1rem;
+  }
 
-    .gallery-row {
-      text-align: center;
-      margin-bottom: 20px;
+  h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    color: #6b4c3b;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.2s ease-in-out;
+  }
 
-    }
+  .subtitle {
+    font-size: 1.2rem;
+    color: #8b5e3c;
+    margin-top: 0.5rem;
+    font-style: italic;
+  }
 
-    .subtitle {
-      font-size: 20px;
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .card {
+    background-color: #fff9f5;
+    border: 2px solid #a9746e; /* 👈 soft brown border */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(139, 94, 60, 0.25); /* 👈 warm brown shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(139, 94, 60, 0.35);
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #e2c6b2;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    color: #8b5e3c;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
     }
-   
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
 
   </style>
 </head>
 <body>
 
-  <br>
-  <center>
-    <marquee direction="Right" behavior="alternate" scrollamount="15">
-      <div class="gallery-title">✨My Gallery✨</div>
-    </marquee>
+  <header>
+    <h1>✨ My Gallery ✨</h1>
+    <p class="subtitle">🧵 my bracelet collection 🧵</p>
+  </header>
 
-    <br>
-    <div class="subtitle">🧵 my bracelets collection 🧵</div>
-    <br>
+  <section class="gallery">
+    <div class="card"><img src="21.jpg" alt="Bracelet 21"></div>
+    <div class="card"><img src="22.jpg" alt="Bracelet 22"></div>
+    <div class="card"><img src="23.jpg" alt="Bracelet 23"></div>
+    <div class="card"><img src="24.jpg" alt="Bracelet 24"></div>
+    <div class="card"><img src="25.jpg" alt="Bracelet 25"></div>
+    <div class="card"><img src="26.jpg" alt="Bracelet 26"></div>
+    <div class="card"><img src="27.jpg" alt="Bracelet 27"></div>
+    <div class="card"><img src="28.jpg" alt="Bracelet 28"></div>
+    <div class="card"><img src="29.jpg" alt="Bracelet 29"></div>
+    <div class="card"><img src="30.jpg" alt="Bracelet 30"></div>
+    <div class="card"><img src="31.jpg" alt="Bracelet 31"></div>
+    <div class="card"><img src="32.jpg" alt="Bracelet 32"></div>
+    <div class="card"><img src="33.jpg" alt="Bracelet 33"></div>
+    <div class="card"><img src="34.jpg" alt="Bracelet 34"></div>
+    <div class="card"><img src="35.jpg" alt="Bracelet 35"></div>
+    <div class="card"><img src="butterfly bracelet.jpg" alt="Butterfly Bracelet"></div>
+    <div class="card"><img src="friendship bracelet.jpg" alt="Friendship Bracelet"></div>
+    <div class="card"><img src="black bracelet.jpg" alt="Black Bracelet"></div>
+    <div class="card"><img src="stack bracelet 2.jpg" alt="Stack Bracelet"></div>
+    <div class="card"><img src="yellow flower bracelet.jpg" alt="Yellow Flower Bracelet"></div>
+  </section>
 
-    <!-- Gallery Rows -->
-    <div class="gallery-row">
-      <img src="21.jpg" alt="Bracelet 21">
-      <img src="22.jpg" alt="Bracelet 22">
-      <img src="23.jpg" alt="Bracelet 23">
-      <img src="24.jpg" alt="Bracelet 24">
-      <img src="25.jpg" alt="Bracelet 25">
-    </div>
 
-    <div class="gallery-row">
-      <img src="26.jpg" alt="Bracelet 26">
-      <img src="27.jpg" alt="Bracelet 27">
-      <img src="28.jpg" alt="Bracelet 28">
-      <img src="29.jpg" alt="Bracelet 29">
-      <img src="30.jpg" alt="Bracelet 30">
-    </div>
-
-    <div class="gallery-row">
-      <img src="31.jpg" alt="Bracelet 31">
-      <img src="32.jpg" alt="Bracelet 32">
-      <img src="33.jpg" alt="Bracelet 33">
-      <img src="34.jpg" alt="Bracelet 34">
-      <img src="35.jpg" alt="Bracelet 35">
-    </div>
-
-    <div class="gallery-row">
-      <img src="butterfly bracelet.jpg" alt="">
-      <img src="friendship bracelet.jpg" alt="">
-     <img src="black bracelet.jpg" alt="">
-      <img src="stack bracelet 2.jpg" alt="">
-      <img src="yellow flower bracelet.jpg" alt="">
-    </div>
-  </center>
 
 </body>
 </html>
