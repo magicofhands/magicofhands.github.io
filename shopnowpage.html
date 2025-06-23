@@ -1,203 +1,206 @@
-<Html>
-<Head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop now page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<Title>Bracelet my Richel</title>
-	<style>
-		img{
-			border-color: saddlebrown;
-		}
-			hr{
-			border-color: saddlebrown;
-		}
+    body {
+      background-color: #f3e8e0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4b2e2e;
+    }
 
-	</style>
-</Head>
-<script>
-  function addToCart(name, price, img) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ name, price, img });
-    localStorage.setItem("cart", JSON.stringify(cart));
-    alert("Added to cart! 🛒");
-  }
-</script>
-<body style="background-color: #FFD1BA;">
- <center>
-<marquee direction="Right" behavior="alternate" scrollamount="15">
-<h1 style=font-family: 'Bubbly Soda';
-  src: url('fonts/BubblySoda.ttf') format('truetype'); size="1000">Shop now!</h1>
-</marquee>
-<hr style="size: 4 ;" color="black">
-</center>
-<img src="butterfly bracelet.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> butterfly charm bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.200
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('butterfly charm bracelet', 200, 'butterfly bracelet.jpg')">Add to Cart</button>
-</insert>
-<br>
-<hr>
-<img src="black bracelet.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> black beaded bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.200
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('black beaded bracelet', 200, 'black bracelet.jpg')">Add to Cart</button>
-</insert>
-<br>
-<hr>
-<img src="friendship bracelet.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> friendship bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.200
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('friendship bracelet', 200, 'friendship bracelet')">Add to Cart</button>
-</insert>
-<br><br>
-<img src="yellow flower bracelet.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> yellow flower bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.200
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('yellow flower bracelet', 200, 'yellow flower bracelet')">Add to Cart</button>
-</insert>
-<br><br>
-<img src="stack bracelet 2.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> stack bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.200
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('stack bracelet', 200, 'stack bracelet')">Add to Cart</button>
-</insert>
-<br><br>
-<img src="25.jpg" width="250" length="250" Border="3" >
-<br>
-<insert>
-	<strong>Item:</strong> Colourful beads + Name alphabet Bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100
-<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('Colourful beads + Name alphabet Bracelet', 100, '25.jpg')">Add to Cart</button>
-</insert>
-<br>
-<hr style="size: 4 ;" color="
-<br>
-<insert>
-	<strong>Item:</strong> Emoji + White pearl bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.120
-	<br>
-	<button>Add to cart</button>
-</insert>
-<hr style="size: 4 ;" color="Black">
-<img src="34.jpg" width="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> 1 Emoji + Golden beads bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.130
-	<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('1 Emoji + Golden beads bracelet', 130, '34.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="33.jpg" wdth="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> Black and white bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.120
-	<br>
-	<button style="background-color: #CDA4DE;"onclick="addToCart('Black and white bracelet', 120, '33.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="32.jpg" wdth="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> Colourful + Random alphabets bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.120
-	<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('Colourful + Random alphabets bracelet', 120, '32.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="29.jpg" wdth="90" length="90" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> emoji + First name alphabet bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100
-<br>
-<button style="background-color: #CDA4DE;" onclick="addToCart('emoji + First name alphabet bracelet', 100, '29.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="26.jpg" wdth="90" length="90" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> 1 emoji + Golden beads + alphabet beads bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.150
-<br>
-<button style="background-color: #CDA4DE;" onclick="addToCart('1 emoji + Golden beads + alphabet beads bracelet', 150, '26.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="24.jpg" wdth="90" length="90" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> only emoji beads bracelet
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100
-<br>
-<button style="background-color: #CDA4DE;" onclick="addToCart('only emoji beads bracelet', 100, '24.jpg')">Add to Cart</button>
-</insert>
-<hr style="size: 4 ;" color="black">
-<img src="22.jpg" wdth="250" length="250" Border="3">
-<br>
-<insert>
-	<strong>Item:</strong> name alphbet + White pearls Bracelet 
-</insert>
-<br>
-<insert>
-	<strong>price:</strong> RS.100</insert>
-	<br>
-	<button style="background-color: #CDA4DE;" onclick="addToCart('Only emoji beads bracelet', 100)">Add to Cart</button><br><br>
-	
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #6b4c3b;
+      text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .shop-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 2rem;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .item-card {
+      background-color: #fff9f5;
+      border: 2px solid #a9746e;
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 0 10px 20px rgba(139, 94, 60, 0.15);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 32px rgba(139, 94, 60, 0.25);
+    }
+
+    .item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 3px solid #a9746e;
+      margin-bottom: 1rem;
+    }
+
+    .item-card strong {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .item-card button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #cfa68c;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .item-card button:hover {
+      background-color: #b38366;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <script>
+    function addToCart(name, price, img) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price, img });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Added to cart! 🛒");
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>🛍️ Shop Now by Richel</h1>
+  </header>
+
+  <section class="shop-container">
+    <div class="item-card">
+      <img src="butterfly bracelet.jpg" alt="">
+      <strong>butterfly charm bracelet</strong>
+      <span>RS.200</span>
+      <button onclick="addToCart('butterfly charm bracelet', 200, 'butterfly bracelet.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="black bracelet.jpg" alt="">
+      <strong>black beaded bracelet</strong>
+      <span>RS.200</span>
+      <button onclick="addToCart('black beaded bracelet', 200, 'black bracelet.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="friendship bracelet.jpg" alt="">
+      <strong>friendship bracelet</strong>
+      <span>RS.200</span>
+      <button onclick="addToCart('friendship bracelet', 200, 'friendship bracelet.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="yellow flower bracelet.jpg" alt="">
+      <strong>yellow flower bracelet</strong>
+      <span>RS.200</span>
+      <button onclick="addToCart('yellow flower bracelet', 200, 'yellow flower bracelet.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="stack bracelet 2.jpg" alt="">
+      <strong>stack bracelet</strong>
+      <span>RS.200</span>
+      <button onclick="addToCart('stack bracelet', 200, 'stack bracelet 2.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="25.jpg" alt="">
+      <strong>Colourful beads + Name alphabet Bracelet</strong>
+      <span>RS.100</span>
+      <button onclick="addToCart('Colourful beads + Name alphabet Bracelet', 100, '25.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="34.jpg" alt="">
+      <strong>1 Emoji + Golden beads bracelet</strong>
+      <span>RS.130</span>
+      <button onclick="addToCart('1 Emoji + Golden beads bracelet', 130, '34.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="33.jpg" alt="">
+      <strong>Black and white bracelet</strong>
+      <span>RS.120</span>
+      <button onclick="addToCart('Black and white bracelet', 120, '33.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="32.jpg" alt="">
+      <strong>Colourful + Random alphabets bracelet</strong>
+      <span>RS.120</span>
+      <button onclick="addToCart('Colourful + Random alphabets bracelet', 120, '32.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="29.jpg" alt="">
+      <strong>emoji + First name alphabet bracelet</strong>
+      <span>RS.100</span>
+      <button onclick="addToCart('emoji + First name alphabet bracelet', 100, '29.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="26.jpg" alt="">
+      <strong>1 emoji + Golden + alphabet beads bracelet</strong>
+      <span>RS.150</span>
+      <button onclick="addToCart('1 emoji + Golden + alphabet beads bracelet', 150, '26.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="24.jpg" alt="">
+      <strong>only emoji beads bracelet</strong>
+      <span>RS.100</span>
+      <button onclick="addToCart('only emoji beads bracelet', 100, '24.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="item-card">
+      <img src="22.jpg" alt="">
+      <strong>name alphabet + White pearls bracelet</strong>
+      <span>RS.100</span>
+      <button onclick="addToCart('name alphabet + White pearls bracelet', 100, '22.jpg')">Add to Cart</button>
+    </div>
+  </section>
 
 </body>
-</Html>
+</html>
