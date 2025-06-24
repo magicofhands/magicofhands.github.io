@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Me</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background-color: #f3e8e0;
       font-family: 'Segoe UI', sans-serif;
       color: #4b2e2e;
-      margin: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      padding: 20px;
       text-align: center;
     }
 
@@ -23,13 +28,14 @@
       font-size: 2.8rem;
       color: #6b4c3b;
       text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
       animation: fadeIn 1s ease;
     }
 
     p {
       font-size: 1.1rem;
       color: #7b5c4a;
-      margin-top: 10px;
+      margin-bottom: 30px;
       animation: fadeIn 1.2s ease;
     }
 
@@ -40,7 +46,6 @@
       padding: 15px 30px;
       border-radius: 30px;
       font-size: 1.1rem;
-      margin-top: 30px;
       cursor: pointer;
       box-shadow: 0 10px 24px rgba(139, 94, 60, 0.25);
       transition: all 0.3s ease;
@@ -62,11 +67,22 @@
         transform: translateY(0);
       }
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .contact-button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Let's Be Friends 💌</h1>
+  <h1>Let’s Be Friends 💌</h1>
   <p>Got a project or just wanna say hi?</p>
 
   <a href="mailto:richelrani0@gmail.com" style="text-decoration: none;">
