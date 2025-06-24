@@ -4,54 +4,109 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title style="color: #5D4037;">Custom Bracelet Order</title>
+  <title>Custom Bracelet Order</title>
   <style>
-    body { font-family: Arial; padding: 20px; max-width: 600px; margin: auto; background-color: #FFD1BA;}
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      requierd: required;
+    * {
+      box-sizing: border-box;
     }
-    button {
-      background: #F497B0;
-      color: white;
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3e8e0;
+      color: #4b2e2e;
+      padding: 40px 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #6b4c3b;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      background-color: #fff9f5;
+      border: 2px solid #a9746e;
+      padding: 25px;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 10px 20px rgba(139, 94, 60, 0.15);
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #5c4033;
+    }
+
+    input,
+    textarea {
+      width: 100%;
       padding: 12px;
-      width: 100%;
-      font-size: 16px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      requierd: required;
+      margin-bottom: 20px;
+      border: 1px solid #d9b79f;
+      border-radius: 10px;
+      background-color: #fffefb;
+      font-size: 1rem;
+      color: #4b2e2e;
     }
-    .thank-you {
-      background: #e0ffe0;
-      padding: 15px;
-      border-radius: 6px;
-      margin-top: 20px;
-      display: none;
-      requierd: required;
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #cfa68c;
+      box-shadow: 0 0 6px rgba(207, 166, 140, 0.5);
+    }
+
+    button {
+      background-color: #cfa68c;
+      color: white;
+      font-size: 1.1rem;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #b38366;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 2rem;
+      }
+
+      form {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<h2>✨ Custom Bracelet Order ✨</h2>
+  <h2>✨ Custom Bracelet Order ✨</h2>
 
-<form action="https://formspree.io/f/mjkweoee" method="POST">
-  <label>Your Name</label>
-  <input type="text" name="name" required>
+  <form action="https://formspree.io/f/mjkweoee" method="POST">
+    <label for="name">Your Name</label>
+    <input type="text" name="name" id="name" required>
 
-  <label>Phone Number</label>
-  <input type="tel" name="phone" required>
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" required>
 
-  <label>Custom Bracelet Details</label>
-  <textarea name="details" rows="4" required></textarea>
+    <label for="details">Custom Bracelet Details</label>
+    <textarea name="details" id="details" rows="4" required></textarea>
 
-  <button type="submit">Place Custom Order</button>
-</form>
+    <button type="submit">Place Custom Order</button>
+  </form>
 
 </body>
 </html>
