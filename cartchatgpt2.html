@@ -5,275 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Cart</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #FFD1BA;
-      margin: 0;
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-    }
+    <style>
+  * {
+    box-sizing: border-box;
+  }
 
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f3e8e0;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1100px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .left, .right {
+    flex: 1;
+    min-width: 320px;
+    max-width: 520px;
+    background: #fff9f5;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 24px rgba(139, 94, 60, 0.15);
+    border: 2px solid #a9746e;
+  }
+
+  h1, h2 {
+    color: #6b4c3b;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5cfc4;
+    font-size: 1.1rem;
+    color: #5c4033;
+  }
+
+  .cart-item:last-child {
+    border-bottom: none;
+  }
+
+  .cart-empty {
+    text-align: center;
+    color: #9e7c6c;
+    font-style: italic;
+    padding: 30px 0;
+  }
+
+  .cart-total {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #4b2e2e;
+  }
+
+  .remove-btn {
+    background: #e26d6d;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background 0.2s ease;
+  }
+
+  .remove-btn:hover {
+    background: #c94040;
+  }
+
+  #submit-order {
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: #cfa68c;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+  }
+
+  #submit-order:hover {
+    background: #b38366;
+  }
+
+  .input-field {
+    margin-top: 20px;
+  }
+
+  .input-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #5c4033;
+  }
+
+  .input-field input,
+  .input-field select,
+  .input-field textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d9b79f;
+    font-size: 1rem;
+    background: #fffefb;
+    color: #4b2e2e;
+    margin-bottom: 10px;
+  }
+
+  .input-field input:focus,
+  .input-field textarea:focus,
+  .input-field select:focus {
+    outline: none;
+    border-color: #cfa68c;
+    box-shadow: 0 0 6px rgba(207, 166, 140, 0.5);
+  }
+
+  @media (max-width: 768px) {
     .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      max-width: 1100px;
-      width: 100%;
-      justify-content: space-between;
-    }
-
-    .left, .right {
-      flex: 1;
-      min-width: 320px;
-      max-width: 500px;
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    h1, h2 {
-      color: #333;
-      margin-bottom: 20px;
-      font-size: 1.5rem;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 12px 0;
-      border-bottom: 1px solid #eee;
-      font-size: 1.1rem;
     }
-
-    .cart-item:last-child {
-      border-bottom: none;
-    }
-
-    .cart-empty {
-      text-align: center;
-      color: #888;
-      font-style: italic;
-      padding: 30px 0;
-    }
-
-    .cart-total {
-      margin-top: 20px;
-      text-align: right;
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #222;
-    }
-
-    .remove-btn {
-      background: #ff4d4d;
-      border: none;
-      color: white;
-      padding: 6px 10px;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-left: 10px;
-      transition: background 0.2s ease;
-    }
-
-    .remove-btn:hover {
-      background: #e60000;
-    }
-
-    #submit-order {
-      margin-top: 30px;
-      padding: 12px 24px;
-      background: #5D4037;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    #submit-order:hover {
-      background: #4a3029;
-    }
-
-    .input-field {
-      margin-top: 15px;
-    }
-
-    .input-field label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    .input-field input,
-    .input-field select,
-    .input-field textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <form id="cart-form" action="https://formspree.io/f/mjkweoee" method="POST" onsubmit="return prepareAndSubmit()" enctype="multipart/form-data">
-    <div class="container">
-
-      <!-- LEFT SIDE -->
-      <div class="left">
-        <h1>🛒 Your Cart</h1>
-
-        <div id="cart-items"></div>
-        <div id="cart-total" class="cart-total"></div>
-
-        <!-- User Info -->
-        <div class="input-field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-
-        <div class="input-field">
-          <label for="email">Gmail</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-
-        <div class="input-field">
-          <label for="contact">Contact Number</label>
-          <input type="tel" id="contact" name="contact" pattern="[0-9]{10,15}" placeholder="e.g. 03001234567" required />
-        </div>
-
-        <div class="input-field">
-          <label for="address">Address</label>
-          <textarea id="address" name="address" rows="3" required></textarea>
-        </div>
-      </div>
-
-      <!-- RIGHT SIDE -->
-      <div class="right">
-        <h2>💳 Payment Method</h2>
-
-        <div class="input-field">
-          <label for="payment_method">Select Payment Method</label>
-          <select id="payment_method" name="payment_method" required>
-            <option value="">-- Choose --</option>
-            <option value="Easypaisa">Easypaisa</option>
-            <option value="JazzCash">JazzCash</option>
-            <option value="Bank Transfer">Bank Transfer</option>
-          </select>
-        </div>
-
-        <div class="input-field">
-          <label for="sender_name">Sender Name</label>
-          <input type="text" id="sender_name" name="sender_name" required />
-        </div>
-
-        <div class="input-field">
-          <label for="sender_number">Sender Number</label>
-          <input type="tel" id="sender_number" name="sender_number" required />
-        </div>
-
-        <div class="input-field">
-          <label for="txn_id">Transaction ID</label>
-          <input type="text" id="txn_id" name="txn_id" required />
-        </div>
-
-        <div class="input-field">
-          <label for="payment_screenshot">Upload Screenshot (optional)</label>
-          <input type="file" id="payment_screenshot" name="payment_screenshot" accept="image/*" />
-        </div>
-
-        <!-- Hidden field to send cart data -->
-        <textarea name="cart_data" id="cart_data" style="display:none;"></textarea>
-
-        <button id="submit-order" type="submit">Submit Order</button>
-      </div>
-
-    </div>
-  </form>
-
-  <script>
-    const DELIVERY_CHARGE = 200;
-
-    function renderCart() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const cartItemsDiv = document.getElementById('cart-items');
-      const cartTotalDiv = document.getElementById('cart-total');
-
-      cartItemsDiv.innerHTML = '';
-      cartTotalDiv.innerHTML = '';
-
-      if (cart.length === 0) {
-        cartItemsDiv.innerHTML = '<div class="cart-empty">Your cart is empty 😔</div>';
-        return;
-      }
-
-      let subtotal = 0;
-
-      cart.forEach((product, index) => {
-        const itemDiv = document.createElement('div');
-        itemDiv.classList.add('cart-item');
-
-        itemDiv.innerHTML = `
-          <span>${product.name}</span>
-          <div>
-            <span>Rs ${product.price}</span>
-            <button class="remove-btn" type="button" onclick="removeItem(${index})">Remove</button>
-          </div>
-        `;
-
-        cartItemsDiv.appendChild(itemDiv);
-        subtotal += Number(product.price);
-      });
-
-      const total = subtotal + DELIVERY_CHARGE;
-
-      cartTotalDiv.innerHTML = `
-        <div>Subtotal: Rs ${subtotal}</div>
-        <div>Delivery Charges: Rs ${DELIVERY_CHARGE}</div>
-        <div style="font-weight: bold;">Total: Rs ${total}</div>
-      `;
-    }
-
-    function removeItem(index) {
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.splice(index, 1);
-      localStorage.setItem('cart', JSON.stringify(cart));
-      renderCart();
-    }
-
-    function prepareAndSubmit() {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      if (cart.length === 0) {
-        alert("Your cart is empty! Add items before submitting.");
-        return false;
-      }
-
-      let cartText = "🛍️ Your Cart Order:\n\n";
-      let subtotal = 0;
-      cart.forEach(item => {
-        cartText += `${item.name} - Rs ${item.price}\n`;
-        subtotal += Number(item.price);
-      });
-
-      const total = subtotal + DELIVERY_CHARGE;
-      cartText += `\nSubtotal: Rs ${subtotal}`;
-      cartText += `\nDelivery Charges: Rs ${DELIVERY_CHARGE}`;
-      cartText += `\nTotal (with delivery): Rs ${total}`;
-
-      document.getElementById('cart_data').value = cartText;
-      return true;
-    }
-
-    document.addEventListener("DOMContentLoaded", renderCart);
-    window.addEventListener("storage", () => {
-      renderCart();
-    });
-  </script>
-</body>
-</html>
+  }
+</style>
